@@ -8,5 +8,5 @@ export default function Pizzas() {
       <Head title='Pizzas' />
       <SnackTitle>Pizzas</SnackTitle>
     </>
-  )_
+  );
 }

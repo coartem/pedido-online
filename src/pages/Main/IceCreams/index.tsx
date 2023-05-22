@@ -8,5 +8,5 @@ export default function IceCreams() {
       <Head title='Sobremesas' />
       <SnackTitle>Sobremesas</SnackTitle>
     </>
-  )_
+  );
 }
