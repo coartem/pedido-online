@@ -2,7 +2,7 @@ import { Head } from '../../../components/Head'
 import { SnackTitle } from '../../../components/SnackTitle'
 import { Snacks } from '../../../components/Snacks'
 
-export default function Burgers() {
+export default function Drinks() {
   const data = [
     {
       id: 1,
