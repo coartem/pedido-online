@@ -6,6 +6,6 @@ interface TitleProps {
   children: ReactNode
 }
 
-export function SnackTitle({children}: TitleProps) {
+export function SnackTitle({ children }: TitleProps) {
   return <Title>{children}</Title>
 }

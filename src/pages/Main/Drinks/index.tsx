@@ -1,14 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
+
 import { Head } from '../../../components/Head'
-import { SnackTitle } from '../../../components/SnackTitle'
 import { Snacks } from '../../../components/Snacks'
+import { SnackTitle } from '../../../components/SnackTitle'
+
 import { getDrinks } from '../../../services/api'
 
 export default function Drinks() {
-  const[drinks, setDrinks] = useState ([])
+  const [drinks, setDrinks] = useState([])
 
   useEffect(() => {
-    (async () => {
+    ;(async () => {
       const drinksRequest = await getDrinks()
 
       setDrinks(drinksRequest.data)

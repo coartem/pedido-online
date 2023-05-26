@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Title = styled.h1`
   display: flex;
@@ -7,7 +7,7 @@ export const Title = styled.h1`
 
   margin-bottom: 3rem;
 
-  font-size: ${({theme}) => theme.fontSize['4xl']};
+  font-size: ${({ theme }) => theme.fontSize['4xl']};
   font-weight: 500;
   text-transform: uppercase;
 
@@ -21,7 +21,7 @@ export const Title = styled.h1`
   }
 
   @media (max-width: 720px) {
-    font-size: ${({theme}) => theme.fontSize['3xl']};
+    font-size: ${({ theme }) => theme.fontSize['3xl']};
     justify-content: center;
 
     &::before {

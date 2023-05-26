@@ -1,8 +1,8 @@
-import { darken } from 'polished';
+import { darken } from 'polished'
 
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-export const Container =  styled.div`
+export const Container = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, auto));
   gap: 1.75rem;
@@ -29,7 +29,7 @@ export const Container =  styled.div`
       width: 100%;
       height: 11.25rem;
       border-radius: 4px;
-      margin-bottom:  0.375rem;
+      margin-bottom: 0.375rem;
     }
 
     p {
@@ -37,7 +37,7 @@ export const Container =  styled.div`
     }
 
     div {
-      margin-top: .875rem;
+      margin-top: 0.875rem;
 
       display: flex;
       align-items: center;
@@ -66,10 +66,9 @@ export const Container =  styled.div`
         }
 
         &:hover {
-          background: ${darken(.1, '#AA2424')};
+          background: ${darken(0.1, '#AA2424')};
         }
       }
     }
   }
 `
-
