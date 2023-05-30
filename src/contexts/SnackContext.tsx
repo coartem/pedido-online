@@ -1,7 +1,8 @@
-import { ReactNode, createContext, useEffect, useState } from 'react'
-import { SnackData } from '../interfaces/SnackData'
-import { getBurgers, getPizzas, getDrinks, getIceCreams } from '../services/api'
+import { createContext, ReactNode, useEffect, useState } from 'react'
 
+import { SnackData } from '../interfaces/SnackData'
+
+import { getBurgers, getDrinks, getIceCreams, getPizzas } from '../services/api'
 
 interface SnackContextProps {
   burgers: SnackData[]
@@ -11,12 +12,12 @@ interface SnackContextProps {
 }
 
 interface SnackProviderProps {
-  children: ReactNode;
+  children: ReactNode
 }
 
 export const SnackContext = createContext({} as SnackContextProps)
 
-export function SnackProvider ({ children }: SnackProviderProps) {
+export function SnackProvider({ children }: SnackProviderProps) {
   const [burgers, setBurgers] = useState<SnackData[]>([])
   const [pizzas, setPizzas] = useState<SnackData[]>([])
   const [drinks, setDrinks] = useState<SnackData[]>([])
@@ -25,33 +26,33 @@ export function SnackProvider ({ children }: SnackProviderProps) {
   useEffect(() => {
     ;(async () => {
       try {
-      const burgerRequest = await getBurgers()
-      const pizzaRequest = await getPizzas()
-      const drinkRequest = await getDrinks()
-      const iceCreamsRequest = await getIceCreams()
+        const burgerRequest = await getBurgers()
+        const pizzaRequest = await getPizzas()
+        const drinkRequest = await getDrinks()
+        const iceCreamRequest = await getIceCreams()
 
-      const requests = [burgerRequest, pizzaRequest, drinkRequest, iceCreamsRequest]
+        const requests = [burgerRequest, pizzaRequest, drinkRequest, iceCreamRequest]
 
-      const [
-        {data: burgerResponse },
-        {data: pizzaResponse },
-        {data: drinkResponse },
-        {data: iceCreamsResponse },
-      ] = await Promise.all(requests)
+        const [
+          { data: burgerResponse },
+          { data: pizzaResponse },
+          { data: drinkResponse },
+          { data: iceCreamResponse },
+        ] = await Promise.all(requests)
 
-      setBurgers(burgerResponse)
-      setPizzas(pizzaResponse)
-      setDrinks(drinkResponse)
-      setIceCreams(iceCreamsResponse)
-    } catch (error) {
-      console.error(error)
-    }
+        setBurgers(burgerResponse)
+        setPizzas(pizzaResponse)
+        setDrinks(drinkResponse)
+        setIceCreams(iceCreamResponse)
+      } catch (error) {
+        console.error(error)
+      }
     })()
   }, [])
 
   return (
     <SnackContext.Provider value={{ burgers, pizzas, drinks, iceCreams }}>
       {children}
-  </SnackContext.Provider>
+    </SnackContext.Provider>
   )
 }
