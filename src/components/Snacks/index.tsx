@@ -2,7 +2,7 @@ import { FiPlus } from 'react-icons/fi'
 
 import { currencyFormat } from '../../helpers/currencyFormat'
 import { SkeletonSnack } from './SkeletonSnack'
-
+import { useCart } from '../../hooks/useCart'
 import { Container } from './styles'
 import { SnackData } from '../../interfaces/SnackData'
 
@@ -11,6 +11,8 @@ interface SnacksProps {
 }
 
 export function Snacks({ snacks }: SnacksProps) {
+  const { addSnackIntoCart } = useCart()
+
   return (
     <Container>
       {!snacks.length
@@ -22,7 +24,7 @@ export function Snacks({ snacks }: SnacksProps) {
               <p>{snack.description}</p>
               <div>
                 <strong>{currencyFormat(snack.price)}</strong>
-                <button type='button'>
+                <button type='button' onClick={() => addSnackIntoCart(snack)}>
                   <FiPlus />
                 </button>
               </div>
