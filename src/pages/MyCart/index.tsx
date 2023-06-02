@@ -1,10 +1,12 @@
 import { Container } from './styles'
-
+import { Head } from '../../components/Head'
+import { OrderHeader } from '../../components/OrderHeader'
 
 export default function Main() {
   return (
     <Container>
-      <h1>My Cart</h1>
+      <Head title ='Carrinho' />
+      <OrderHeader />
     </Container>
   )
 }
