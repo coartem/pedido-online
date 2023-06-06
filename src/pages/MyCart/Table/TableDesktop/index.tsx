@@ -10,6 +10,8 @@ import minusImg from '../../../../assets/circle-minus.svg'
 
 import { Container } from './styles'
 
+import { ConfirmOrder } from '../../../../components/ConfirmOrder'
+
 export function TableDesktop() {
   const { cart, removeSnackFromCart, snackCartIncrement, snackCartDecrement } = useCart()
 
@@ -51,13 +53,14 @@ export function TableDesktop() {
               </td>
               <td>
                 <button type='button' onClick={() => removeSnackFromCart(item)}>
-                  <FaTrashAlt />                
+                  <FaTrashAlt />
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <ConfirmOrder />
     </Container>
   )
 }
