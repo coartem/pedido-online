@@ -42,4 +42,11 @@ export const Form = styled.form`
       color: ${({ theme }) => theme.colors.white};
       margin-bottom: 0.5rem;
     }
+
+    input[type='email'],
+    input[type='number'],
+    input[type='tel'],
+    input[type='text'] {
+      
+    }
 `
