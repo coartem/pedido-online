@@ -154,8 +154,8 @@ export default function Payment() {
               />
             </div>
           </div>
+          <PayOrder />
         </Form>
-        <PayOrder />
       </Inner>
     </Container>
   )
