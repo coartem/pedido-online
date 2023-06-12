@@ -1,12 +1,13 @@
+import { useForm, SubmitHandler, Controller } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
+import { IMaskInput } from 'react-imask';
 
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-import { IMaskInput } from 'react-imask'
-import { Head } from '../../components/Head'
-import { PayOrder } from '../../components/OrderCloseAction/PayOrder'
-import { OrderHeader } from '../../components/OrderHeader'
+import { Head } from '../../components/Head';
+import { PayOrder } from '../../components/OrderCloseAction/PayOrder';
+import { OrderHeader } from '../../components/OrderHeader';
 
-import { Container, Form, Inner } from './styles'
+import { Container, Form, Inner } from './styles';
 
 const schema = yup
   .object({
