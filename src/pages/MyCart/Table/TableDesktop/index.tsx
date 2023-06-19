@@ -1,16 +1,14 @@
 import { FaTrashAlt } from 'react-icons/fa'
-
 import { useCart } from '../../../../hooks/useCart'
+
+import { ConfirmOrder } from '../../../../components/OrderCloseAction/ConfirmOrder'
 
 import { currencyFormat } from '../../../../helpers/currencyFormat'
 
-import plusImg  from '../../../../assets/circle-plus.svg'
-
 import minusImg from '../../../../assets/circle-minus.svg'
+import plusImg from '../../../../assets/circle-plus.svg'
 
 import { Container } from './styles'
-
-import { ConfirmOrder } from '../../../../components/OrderCloseAction/ConfirmOrder'
 
 export function TableDesktop() {
   const { cart, removeSnackFromCart, snackCartIncrement, snackCartDecrement } = useCart()
@@ -42,7 +40,7 @@ export function TableDesktop() {
                   <button type='button' onClick={() => snackCartDecrement(item)}>
                     <img src={minusImg} alt='Remover quantidade' />
                   </button>
-                  <span>{`${item.quantity}`.padStart(2,'0')}</span>
+                  <span>{`${item.quantity}`.padStart(2, '0')}</span>
                   <button type='button' onClick={() => snackCartIncrement(item)}>
                     <img src={plusImg} alt='Adicionar quantidade' />
                   </button>

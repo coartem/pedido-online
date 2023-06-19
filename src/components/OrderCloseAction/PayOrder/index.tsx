@@ -1,17 +1,17 @@
-import { currencyFormat } from '../../../helpers/currencyFormat'
-
 import { useCart } from '../../../hooks/useCart'
 
-import { Container } from '../styles'
+import { currencyFormat } from '../../../helpers/currencyFormat'
 
-export function PayOrder () {
-  const { cart } = useCart ()
+import { Container } from '../style'
+
+export function PayOrder() {
+  const { cart } = useCart()
 
   const totalAmount = cart.reduce((acc, item) => (acc += item.subtotal), 0)
 
   return (
     <Container>
-      <button type="submit">Pagar</button>
+      <button type='submit'>Pagar</button>
       <span>
         Total <strong>{currencyFormat(totalAmount)}</strong>
       </span>

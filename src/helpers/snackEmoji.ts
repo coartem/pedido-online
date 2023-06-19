@@ -9,6 +9,6 @@ export function snackEmoji(name: string) {
     case 'ice-cream':
       return '🍨'
     default:
-      return '🧑🍳'
+      return '🧑‍🍳'
   }
 }

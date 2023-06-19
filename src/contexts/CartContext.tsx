@@ -1,7 +1,5 @@
 import { createContext, ReactNode, useState } from 'react'
-
 import { useNavigate } from 'react-router-dom'
-
 import { toast } from 'react-toastify'
 
 import { SnackData } from '../interfaces/SnackData'
@@ -30,9 +28,7 @@ interface CartProviderProps {
 export const CartContext = createContext({} as CartContextProps)
 
 export function CartProvider({ children }: CartProviderProps) {
-
   const navigate = useNavigate()
-
   const [cart, setCart] = useState<Snack[]>([])
 
   function addSnackIntoCart(snack: SnackData): void {
@@ -66,15 +62,17 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function removeSnackFromCart(snack: Snack) {
-    const newCart = cart.filter ((item) => !(item.id === snack.id && item.snack === snack.snack))
+    const newCart = cart.filter((item) => !(item.id === snack.id && item.snack === snack.snack))
 
     setCart(newCart)
   }
 
   function updateSnackQuantity(snack: Snack, newQuantity: number) {
-    if(newQuantity <= 0) return
+    if (newQuantity <= 0) return
 
-    const snackExistentInCart = cart.find((item) => item.id === snack.id && item.snack === snack.snack)
+    const snackExistentInCart = cart.find(
+      (item) => item.id === snack.id && item.snack === snack.snack,
+    )
 
     if (!snackExistentInCart) return
 
@@ -102,10 +100,10 @@ export function CartProvider({ children }: CartProviderProps) {
   }
 
   function confirmOrder() {
-    navigate ('/payment')
+    navigate('/payment')
   }
 
-  function payOrder () {
+  function payOrder() {
     return
   }
 
